@@ -137,45 +137,29 @@ video_url = client.generate_video(
 
 ## 示例视频
 
-本目录包含使用本 Skill 生成的示例视频，展示不同类型的视频创作效果。
+本目录包含使用本 Skill 生成的示例视频，展示不同类型的视频创作效果。点击预览图即可播放完整视频。
 
 ### 01_ocean_sunset.mp4 — 风景类（文生视频）
 
-**类型**：风景/自然  
-**比例**：16:9（横屏）  
-**时长**：约 5 秒  
-**分辨率**：1280x704
+**类型**：风景/自然 | **比例**：16:9（横屏） | **时长**：约 5 秒 | **分辨率**：1280x704
 
-**Prompt**：
-```
-A cinematic shot of a beautiful sunset over the ocean, golden hour light, gentle waves, seagulls flying, slow camera pan, movie still quality, 4K
-```
+**Prompt**：`A cinematic shot of a beautiful sunset over the ocean, golden hour light, gentle waves, seagulls flying, slow camera pan, movie still quality, 4K`
 
-<a href="examples/01_ocean_sunset.mp4">
-  <video src="examples/01_ocean_sunset.mp4" width="640" controls style="max-width:100%; border-radius:8px;"></video>
-</a>
+[![▶ 点击播放 — 01_ocean_sunset](examples/01_ocean_sunset_preview.gif)](examples/01_ocean_sunset.mp4)
 
 ---
 
 ### 02_city_walk.mp4 — 人物类（文生视频）
 
-**类型**：人物/街拍  
-**比例**：9:16（竖屏）  
-**时长**：约 5 秒  
-**分辨率**：704x1280
+**类型**：人物/街拍 | **比例**：9:16（竖屏） | **时长**：约 5 秒 | **分辨率**：704x1280
 
-**Prompt**：
-```
-A young woman walking down a city street at dusk, wearing a stylish coat, cinematic lighting, slow motion, shallow depth of field, movie still quality
-```
+**Prompt**：`A young woman walking down a city street at dusk, wearing a stylish coat, cinematic lighting, slow motion, shallow depth of field, movie still quality`
 
-<a href="examples/02_city_walk.mp4">
-  <video src="examples/02_city_walk.mp4" width="320" controls style="max-width:100%; border-radius:8px;"></video>
-</a>
+[![▶ 点击播放 — 02_city_walk](examples/02_city_walk_preview.gif)](examples/02_city_walk.mp4)
 
 ---
 
-> 💡 点击视频即可直接播放，也可以右键另存下载到本地。
+> 💡 点击预览 GIF 即可在 GitHub 内直接播放完整视频（横屏建议 16:9 全屏播放效果更佳）
 
 ## 相关资源
 
