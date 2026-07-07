@@ -151,7 +151,11 @@ video_url = client.generate_video(
 A cinematic shot of a beautiful sunset over the ocean, golden hour light, gentle waves, seagulls flying, slow camera pan, movie still quality, 4K
 ```
 
-**说明**：展示文生视频的风景创作能力，适合电影感的自然场景。
+<a href="examples/01_ocean_sunset.mp4">
+  <video src="examples/01_ocean_sunset.mp4" width="640" controls style="max-width:100%; border-radius:8px;"></video>
+</a>
+
+---
 
 ### 02_city_walk.mp4 — 人物类（文生视频）
 
@@ -165,7 +169,13 @@ A cinematic shot of a beautiful sunset over the ocean, golden hour light, gentle
 A young woman walking down a city street at dusk, wearing a stylish coat, cinematic lighting, slow motion, shallow depth of field, movie still quality
 ```
 
-**说明**：展示人物动态视频生成，适合短剧、剧情类视频的人物镜头。
+<a href="examples/02_city_walk.mp4">
+  <video src="examples/02_city_walk.mp4" width="320" controls style="max-width:100%; border-radius:8px;"></video>
+</a>
+
+---
+
+> 💡 点击视频即可直接播放，也可以右键另存下载到本地。
 
 ## 相关资源
 
