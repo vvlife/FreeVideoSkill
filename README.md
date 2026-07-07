@@ -158,14 +158,18 @@ video_url = client.generate_video(
 [![▶ 点击播放 — 02_city_walk](examples/02_city_walk_preview.gif)](examples/02_city_walk.mp4)
 
 ---
+---
 
-> 💡 点击预览 GIF 即可在 GitHub 内直接播放完整视频（横屏建议 16:9 全屏播放效果更佳）
+### 03_final_manga_30s.mp4 — AI动漫漫剧 ·《最后一班地铁》
 
-## 相关资源
+**类型**：AI动漫/叙事漫剧 | **比例**：4:3 | **时长**：30秒 | **分辨率**：720p（1088×832）| **帧率**：24fps  
+**模型**：Agnes AI Video (`agnes-video-v2.0`) | **分镜**：6个镜头连续叙事  
+**提示词示例**：
+> Anime style young woman walking alone into a subway station entrance at night, long staircase with soft warm lighting, her slender silhouette descending, cinematic atmosphere, Japanese anime aesthetic, lonely mood
 
-- [Agnes AI 官方文档](https://wiki.agnes-ai.com/)
-- [Agnes AI 控制台](https://platform.agnes-ai.com/)
+**故事简介**：雨夜，一位疲惫的年轻女性走进地铁站，发现末班车已离开。一位神秘的陌生人悄悄为她撑起一把伞……
 
-## 许可证
+**预览（点击 GIF 跳转播放器观看完整 30 秒视频）**：
 
-MIT License
+[![《最后一班地铁》· 30秒AI动漫漫剧 · 点击播放完整视频](examples/final_manga_30s_preview.gif)](examples/final_manga_30s.mp4)
+
