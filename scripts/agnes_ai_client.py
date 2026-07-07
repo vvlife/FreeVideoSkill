@@ -331,11 +331,7 @@ class AgnesAIClient:
                 print(f"[{elapsed:.0f}s] 状态: {status_text}, 进度: {progress}%")
 
             if status_text == "completed":
-                video_url = status.get("video_url") or status.get("output_url")
-                if not video_url:
-                    # 尝试从 data 中获取
-                    if "data" in status and len(status["data"]) > 0:
-                        video_url = status["data"][0].get("url")
+                video_url = self._extract_video_url(status)
 
                 if output_path and video_url:
                     if verbose:
@@ -350,6 +346,53 @@ class AgnesAIClient:
                 raise RuntimeError(f"视频生成失败: {error}")
 
             time.sleep(poll_interval)
+
+    def _extract_video_url(self, status: Dict[str, Any]) -> Optional[str]:
+        """
+        从任务状态中提取视频URL
+        
+        Args:
+            status: 任务状态字典
+            
+        Returns:
+            视频URL，找不到则返回None
+        """
+        # 1. 直接尝试常见字段名
+        for field in ["url", "video_url", "output_url", "result_url"]:
+            url = status.get(field)
+            if url and url.startswith("http"):
+                return url
+        
+        # 2. 尝试从 data 数组中获取
+        if "data" in status and isinstance(status["data"], list) and len(status["data"]) > 0:
+            for field in ["url", "video_url", "output_url"]:
+                url = status["data"][0].get(field)
+                if url and url.startswith("http"):
+                    return url
+        
+        # 3. 尝试从 remixed_from_video_id 中提取基础路径，然后构造URL
+        video_id = status.get("video_id")
+        remixed_url = status.get("remixed_from_video_id")
+        if video_id and remixed_url and remixed_url.startswith("http"):
+            # 从remixed_url中提取基础路径
+            base_path = remixed_url.rsplit("/", 1)[0]
+            url = f"{base_path}/{video_id}.mp4"
+            # 简单验证一下URL格式
+            if url.startswith("http"):
+                return url
+        
+        # 4. 尝试用video_id构造常见格式的URL
+        if video_id:
+            # 尝试几种常见格式
+            candidates = [
+                f"https://platform-outputs.agnes-ai.space/videos/agnes-video-v2.0/{video_id}.mp4",
+                f"https://platform-outputs.agnes-ai.space/videos/agnes-video-v2.0/video_{video_id}.mp4",
+            ]
+            # 这里不做实际请求验证，只返回候选
+            # 调用者可以自行验证
+            return candidates[0]  # 返回最可能的格式
+        
+        return None
 
     def _download_video(self, url: str, output_path: str):
         """下载视频到本地"""
