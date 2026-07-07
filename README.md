@@ -34,6 +34,10 @@
 doubao-creative-video-suite/
 ├── SKILL.md                          # Skill 主入口
 ├── README.md                         # 项目说明
+├── examples/                         # 示例视频
+│   ├── README.md                     # 示例说明
+│   ├── 01_ocean_sunset.mp4           # 风景类文生视频示例
+│   └── 02_city_walk.mp4              # 人物类文生视频示例
 ├── references/
 │   ├── drama/                        # 短剧/剧情视频分支
 │   │   ├── scriptwriter.md           # 剧本创作
@@ -130,6 +134,38 @@ video_url = client.generate_video(
 
 - 人设图：面部正脸、三视图一致
 - 关键帧：剧情匹配、人物场景道具一致
+
+## 示例视频
+
+本目录包含使用本 Skill 生成的示例视频，展示不同类型的视频创作效果。
+
+### 01_ocean_sunset.mp4 — 风景类（文生视频）
+
+**类型**：风景/自然  
+**比例**：16:9（横屏）  
+**时长**：约 5 秒  
+**分辨率**：1280x704
+
+**Prompt**：
+```
+A cinematic shot of a beautiful sunset over the ocean, golden hour light, gentle waves, seagulls flying, slow camera pan, movie still quality, 4K
+```
+
+**说明**：展示文生视频的风景创作能力，适合电影感的自然场景。
+
+### 02_city_walk.mp4 — 人物类（文生视频）
+
+**类型**：人物/街拍  
+**比例**：9:16（竖屏）  
+**时长**：约 5 秒  
+**分辨率**：704x1280
+
+**Prompt**：
+```
+A young woman walking down a city street at dusk, wearing a stylish coat, cinematic lighting, slow motion, shallow depth of field, movie still quality
+```
+
+**说明**：展示人物动态视频生成，适合短剧、剧情类视频的人物镜头。
 
 ## 相关资源
 
