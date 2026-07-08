@@ -1,43 +1,65 @@
-# 创意视频综合套件 (doubao-creative-video-suite)
+# 🎬 创意视频综合套件 (FreeVideoSkill)
 
-一个综合视频创作全流程 Skill，支持短剧/剧情视频和通用商业视频两大类视频生成。
+> 一个综合视频创作全流程 Skill，支持短剧/剧情视频和通用商业视频两大类视频生成。  
+> 内置 Agnes AI 免费API，零成本即可开始创作。
 
-## 功能特性
+---
 
-### 两大创作分支
+## ✨ 核心优势
+
+### 🆓 完全免费，零门槛上手
+
+- **免费 API**：内置 Agnes AI 视频生成 API，目前无限期免费开放，无需付费即可生成视频
+- **一键安装**：作为 QClaw Skill 即装即用，无需复杂的环境配置
+- **免费模型矩阵**：文本(`agnes-2.0-flash`)、文生图(`agnes-image-2.1-flash`，最高4K)、图生图(`agnes-image-2.0-flash`)、视频(`agnes-video-v2.0`)全部免费
+
+### 🎭 两大创作分支，覆盖主流视频场景
 
 | 分支 | 适用场景 |
 |---|---|
 | **短剧/剧情视频** | 短剧、动画、微电影、剧情视频、影视化、动态漫、预告片 |
 | **商业视频** | 产品广告、UGC口播、带货视频、企业宣传、品牌形象片 |
 
-### 完整工作流
+### 🔄 全流程覆盖，从剧本到成片
 
-- **剧本创作**：故事构思、角色设定、剧情发展
-- **分镜设计**：镜头语言、节奏控制、画面描述
-- **资产设定**：角色、场景、道具的视觉设定
-- **关键帧生成**：基于分镜的关键画面
-- **视频生成**：最终视频输出
+不需要多个工具来回切换，一个 Skill 搞定完整视频生产链：
 
-### Agnes AI 集成
+- **剧本创作** → 故事构思、角色设定、剧情发展
+- **分镜设计** → 镜头语言、节奏控制、画面描述
+- **资产设定** → 角色、场景、道具的视觉设定
+- **关键帧生成** → 基于分镜的关键画面
+- **视频生成** → 最终视频输出
 
-内置 Agnes AI API 支持，提供免费的文本、图像、视频生成能力：
+### 🧠 智能工作流，专业级质量控制
 
-- `agnes-2.0-flash` - 文本模型（512K上下文）
-- `agnes-image-2.1-flash` - 文生图（最高4K）
-- `agnes-image-2.0-flash` - 图生图/图像编辑
-- `agnes-video-v2.0` - 视频生成
+- **参数门禁**：生成前必须确认时长、比例、内容、数量，避免无效生成
+- **即时输出**：每生成完一张图或一个视频立即展示，不批量等待
+- **质量审查**：自动检查人设图正脸一致性、关键帧与剧情匹配度
+- **分镜叙事**：支持多镜头连续叙事，可生成30秒+剧情视频
 
-## 目录结构
+### 🛠️ 开发者友好
+
+- 提供 Python 客户端类 `AgnesAIClient`，可直接集成到自己的项目
+- 提供命令行工具 `generate_with_agnes.py`，快速生成图像/视频
+- OpenAI 兼容接口，方便迁移现有代码
+- 完整的 API 文档和参考示例
+
+---
+
+## 📁 目录结构
 
 ```
-doubao-creative-video-suite/
+FreeVideoSkill/
 ├── SKILL.md                          # Skill 主入口
 ├── README.md                         # 项目说明
 ├── examples/                         # 示例视频
 │   ├── README.md                     # 示例说明
 │   ├── 01_ocean_sunset.mp4           # 风景类文生视频示例
-│   └── 02_city_walk.mp4              # 人物类文生视频示例
+│   ├── 01_ocean_sunset_preview.gif   # 风景类预览GIF
+│   ├── 02_city_walk.mp4              # 人物类文生视频示例
+│   ├── 02_city_walk_preview.gif      # 人物类预览GIF
+│   ├── final_manga_30s.mp4           # AI动漫漫剧示例（30秒）
+│   └── final_manga_30s_preview.gif   # 动漫漫剧预览GIF
 ├── references/
 │   ├── drama/                        # 短剧/剧情视频分支
 │   │   ├── scriptwriter.md           # 剧本创作
@@ -55,9 +77,20 @@ doubao-creative-video-suite/
     └── generate_with_agnes.py        # 便捷命令行工具
 ```
 
-## 快速开始
+---
 
-### Agnes AI 配置
+## 🚀 快速开始
+
+### 1. 安装 Skill
+
+将本仓库下载到 QClaw 的 skills 目录：
+
+```bash
+# 克隆仓库
+git clone https://github.com/vvlife/FreeVideoSkill.git ~/.qclaw/skills/FreeVideoSkill
+```
+
+### 2. 配置 Agnes AI（免费）
 
 1. 访问 [Agnes AI 控制台](https://platform.agnes-ai.com) 注册账号
 2. 获取 API Key
@@ -67,7 +100,15 @@ doubao-creative-video-suite/
 export AGNES_API_KEY="your-api-key"
 ```
 
-### 使用命令行工具
+### 3. 开始创作
+
+直接在 QClaw 中用自然语言描述你的需求即可，例如：
+
+> "帮我做一个30秒的动漫短剧，故事是关于一个女孩在雨夜错过了最后一班地铁……"
+
+Skill 会自动完成剧本创作 → 分镜设计 → 资产设定 → 关键帧生成 → 视频生成的全流程。
+
+### 4. 使用命令行工具（可选）
 
 ```bash
 # 文生图
@@ -86,7 +127,7 @@ python scripts/generate_with_agnes.py video -p "人物慢慢转头" -i https://e
 python scripts/generate_with_agnes.py character -n "小明" -d "年轻男性，黑色短发" --style "真人电影"
 ```
 
-### 使用 Python 客户端
+### 5. 使用 Python 客户端（可选）
 
 ```python
 from scripts.agnes_ai_client import AgnesAIClient
@@ -112,7 +153,9 @@ video_url = client.generate_video(
 )
 ```
 
-## 核心规则
+---
+
+## 📋 核心规则
 
 ### 视频生成门禁
 
@@ -135,7 +178,9 @@ video_url = client.generate_video(
 - 人设图：面部正脸、三视图一致
 - 关键帧：剧情匹配、人物场景道具一致
 
-## 示例视频
+---
+
+## 🎥 示例视频
 
 本目录包含使用本 Skill 生成的示例视频，展示不同类型的视频创作效果。点击预览图即可播放完整视频。
 
@@ -158,7 +203,6 @@ video_url = client.generate_video(
 [![▶ 点击播放 — 02_city_walk](examples/02_city_walk_preview.gif)](examples/02_city_walk.mp4)
 
 ---
----
 
 ### 03_final_manga_30s.mp4 — AI动漫漫剧 ·《最后一班地铁》
 
@@ -173,3 +217,14 @@ video_url = client.generate_video(
 
 [![《最后一班地铁》· 30秒AI动漫漫剧 · 点击播放完整视频](examples/final_manga_30s_preview.gif)](examples/final_manga_30s.mp4)
 
+---
+
+## 📄 License
+
+MIT License - 可自由使用、修改、分发。
+
+## 🔗 相关链接
+
+- [Agnes AI 官网](https://platform.agnes-ai.com)
+- [QClaw 官网](https://qclaw.ai)
+- [问题反馈](https://github.com/vvlife/FreeVideoSkill/issues)
